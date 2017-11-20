@@ -24,8 +24,11 @@
 
   - Shared Languages
     - Iron Mountain / Recall
+      - 40+ country sites, may become unrealistic to manage each country as it's own language
+      - Attempt to seperate Language from Country.  Allow countries to "share" languages.  
+      - e.g., the same queens english content can be used for Great Britain, Ireland, India, Australia, New Zealand, Singapore.
     - LNRS?
-    - Likely requires some customization
+    - __Likely requires some customization__
   - Unclustered Tenants
     - This is the opposite of a Site Clusters
     - Out of the box with Sitecore

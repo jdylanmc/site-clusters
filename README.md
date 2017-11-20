@@ -14,10 +14,14 @@
     - AKA: Simple Language Strategy
     - Allegis's EASi & Aerotek websites
     - Out of the box with Sitecore
+
 ![Localized Languages](/images/localized-languages.png)
+
   - Language Fallback
     - Out of the box with Sitecore
+
 ![Language Fallback](/images/language-fallback.png)
+
   - Shared Languages
     - Iron Mountain / Recall
     - LNRS?
@@ -25,7 +29,9 @@
   - Unclustered Tenants
     - This is the opposite of a Site Clusters
     - Out of the box with Sitecore
+
 ![Unclustered Tenants](/images/unclustered-languages.png)
+
   - Read about strategies here: https://brainjocks.atlassian.net/wiki/spaces/ALGP/pages/214962331/Localization+Strategies
 
 ### Architectural Impact:

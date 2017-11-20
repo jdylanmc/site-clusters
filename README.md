@@ -52,7 +52,7 @@
 <configuration>
   <sitecore>
     <site>
-      <site name="mysite" rootPath="/sitecore/content/mysite" language="en-US" hostName="mysite.com|mysite.co.uk" targetHostName="mysite.com" virtualFolder="..." enableItemLanguageFallback="..." secondaryLanguages="en-CA|fr-CA|es-MX" ... />
+      <site name="mysite" rootPath="/sitecore/content/mysite" language="en-US" hostName="mysite.com|mysite.ca|mysite.mx" secondaryLanguages="en-CA|fr-CA|es-MX" targetHostName="mysite.com" virtualFolder="..." enableItemLanguageFallback="..." ... />
     </sites>
   </sitecore>
 </configuration>

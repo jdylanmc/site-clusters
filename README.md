@@ -30,7 +30,7 @@
     - This is the opposite of a Site Clusters
     - Out of the box with Sitecore
 
-![Unclustered Tenants](/images/unclustered-languages.png)
+![Unclustered Tenants](/images/unclustered-langs.png)
 
   - Read about strategies here: https://brainjocks.atlassian.net/wiki/spaces/ALGP/pages/214962331/Localization+Strategies
 

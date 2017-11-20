@@ -48,7 +48,15 @@
     - mysite.com/application/en-us vs mysite.com/application/en-ca
 - Impacts on Site Configuration:
 
-`<site name="mysite" rootPath="/sitecore/content/mysite" language="en-US" hostName="mysite.com" targetHostName="..." virtualFolder="..." enableItemLanguageFallback="..." secondaryLanguages="en-CA|fr-CA|es-MX" ... />`
+```
+<configuration>
+  <sitecore>
+    <site>
+      <site name="mysite" rootPath="/sitecore/content/mysite" language="en-US" hostName="mysite.com" targetHostName="..." virtualFolder="..." enableItemLanguageFallback="..." secondaryLanguages="en-CA|fr-CA|es-MX" ... />
+    </sites>
+  </sitecore>
+</configuration>
+```
   - `name`: must be unique.  This resolves to `Sitecore.Context.Site.Name;`.  Can be useful to split up configuration based on Site Definition.  For instance, enterprise wide components can check Site Definition for arbitrary settings.
   - `virtualFolder`: can be used to inject faux directories into your URL.  e.g., mysite.com/application-name/
     - Let's me to logically split the same URL into different trees or configurations:

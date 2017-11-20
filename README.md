@@ -75,7 +75,7 @@
   - __Major impact to Assembly team__
   - What percentage of your content tree is available in all languages you support?
     - Does the business sell different products in different regions?
-    - Are there country specific offerings.
+    - Are there country specific offerings?
       - Iron Mountain Example: Hipaa only applies to the US.
     - Is there a different marketing team per region with different goals or branding?
   - What is the demographic of your content authoring team?

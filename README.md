@@ -43,11 +43,25 @@
     - mysite.com/en-us vs mysite.com/fr-ca vs mysite.com/fr-fr
     - asia.mysite.com vs europe.mysite.com
     - mysite.com/application/en-us vs mysite.com/application/en-ca
-- SEO/Navigation Strategy
+- Impacts on Site Configuration:
+
+`<site name="mysite" rootPath="/sitecore/content/mysite" language="en-US" hostName="mysite.com" targetHostName="..." virtualFolder="..." enableItemLanguageFallback="..." secondaryLanguages="en-CA|fr-CA|es-MX" ... />`
+  - `name`: must be unique.  This resolves to `Sitecore.Context.Site.Name;`.  Can be useful to split up configuration based on Site Definition.  For instance, enterprise wide components can check Site Definition for arbitrary settings.
+  - `virtualFolder`: can be used to inject faux directories into your URL.  e.g., mysite.com/application-name/
+    - Let's me to logically split the same URL into different trees or configurations:
+      - www.mysite.com/account
+      - www.mysite.com/shop
+      - www.mysite.com
+  - `hostName`: affects how Sitecore resolves the request to your site.  Impacts how the content tree and language are resolved.
+  - `targetHostName`: affects URLs generated programatically through Link Manager. 
+  - `enableItemLanguageFallback`: boolean representing if the given site supports language fallback.
+  - `secondaryLanguages`: custom attribute SCORE uses to generate hreflang tags.
+### SEO/Navigation Strategy
   - How easy is it for you to support and manage featuresets like hreflang tags?
   - How are you resolving canonical tags?
   - Do you care about the difference between mysite.com/en-gb/contact-us vs mysite.co.uk/contact-us?
-- Information Architecture strategy- major impact to Assembly team
+### Information Architecture strategy 
+  - __Major impact to Assembly team__
   - What percentage of your content tree is available in all languages you support?
     - Does the business sell different products in different regions?
     - Are there country specific offerings.
@@ -90,7 +104,7 @@
       - Changing rendering parameters in final layout mode is synonymous to 'translating' them, as you're editing an unshared field
 
 
-###Impacts on changing Shared vs Final:
+### Impacts on changing Shared vs Final:
 | Action | Affects Shared/Final Layout | Where should you do this? |
 |---|---|---|
 | Editing a field on the page (image, text, etc.) |	No | Doesn’t matter |

@@ -12,13 +12,14 @@
 ### Different Flavors:
   - Localized Languages
     - AKA: Simple Language Strategy
-    - Allegis's EASi & Aerotek websites
+    - Allegis's EASi, Populus, and Allegis Group websites
     - Out of the box with Sitecore
 
 ![Localized Languages](/images/localized-languages.png)
 
   - Language Fallback
     - Out of the box with Sitecore
+    - When one language isn't present, render the fallback language
 
 ![Language Fallback](/images/language-fallback.png)
 
@@ -28,10 +29,13 @@
       - Attempt to seperate Language from Country.  Allow countries to "share" languages.  
       - e.g., the same queens english content can be used for Great Britain, Ireland, India, Australia, New Zealand, Singapore.
     - LNRS?
+    - Aerotek - shares APAC languages: en-AU is used for china english/australia english
     - __Likely requires some customization__
+
   - Unclustered Tenants
     - This is the opposite of a Site Clusters
     - Out of the box with Sitecore
+    - Each webbsite is offered in a single language
 
 ![Unclustered Tenants](/images/unclustered-langs.png)
 
@@ -67,11 +71,15 @@
   - `targetHostName`: affects URLs generated programatically through Link Manager. 
   - `enableItemLanguageFallback`: boolean representing if the given site supports language fallback.
   - `secondaryLanguages`: custom attribute SCORE uses to generate hreflang tags.
+
 ### SEO/Navigation Strategy
+
   - How easy is it for you to support and manage featuresets like hreflang tags?
   - How are you resolving canonical tags?
   - Do you care about the difference between mysite.com/en-gb/contact-us vs mysite.co.uk/contact-us?
+
 ### Information Architecture strategy 
+
   - __Major impact to Assembly team__
   - What percentage of your content tree is available in all languages you support?
     - Does the business sell different products in different regions?
@@ -93,13 +101,15 @@
         - Services like xDB Cloud do not support faux languages
         - This may be desirable to the business so that they can market to alternative markets where their content authors don't speak the native language.
 
-
-
 ### What is Unshared, Shared, Final?
+
 - On templates, when adding fields, you can elect fields to be Shared vs Unshared
   - Shared fields are the same in all languages
   - Unshared fields can change per language
     - Only partly true for rendering parameters.
+
+![Shared Fields](/images/shared-fields.png)
+
 - When using Experience Editor, or editing Presentation Details, you have the option to edit in "Shared" or "Final" mode.
   - This is synonymous with Shared and Unshared fields.
   - Editing Shared in experience editor edits the shared presentation field (which is !unversioned!, and shared)
@@ -114,8 +124,24 @@
       - You can't 'translate' rendering parameters in Shared layout mode because you're editing a Shared field
       - Changing rendering parameters in final layout mode is synonymous to 'translating' them, as you're editing an unshared field
 
+### Quick Tip on Shared vs Final impact:
+
+When editing in experience editor, most actions bring up a 'Toolbar' panel.  This panel will have a keyword of either `rendering`, `field`, or `placeholder`.
+
+![Toolbar Field](/images/toolbar-field.png)
+
+If what you're editing shows `field`, then this means you're editing a datasource (or page) field in the current language.  Shared and final toggling does not matter, as fields are not tied to presentation.
+
+![Toolbar Placeholder](/images/toolbar-placeholder.png)
+
+If what you're editing shows `placeholder`, then this means you're modifying the presentation of the page (either by changing the placeholder properties or adding/removing renderings).  Since the shared/final toggle is intended for presentation changes, touching a `placeholder` will affect either shared or final presentation.
+
+![Toolbar Rendering](/images/toolbar-rendering.png)
+
+If you are editing a `rendering` (e.g., changing rendering parameters, personalizing, a/b testing, removing, etc), then shared/final do matter.  Any changes to `renderings` will affect either shared or final presentation.
 
 ### Impacts on changing Shared vs Final:
+
 | Action | Affects Shared/Final Layout | Where should you do this? |
 |---|---|---|
 | Editing a field on the page (image, text, etc.) |	No | Doesn’t matter |
@@ -130,6 +156,7 @@
 | Changing a personalization rule for Spanish only | Yes | Final Presentation |
 
 ### Strategies:
+
 - A few easy "Rule of Thumb" strategies for websites:
   - Option 1: Build your standard values in Shared layout, and do all content in the tree in Final layout
     - This keeps your std values clean, and allows you to easily make changes to std values without impacting content

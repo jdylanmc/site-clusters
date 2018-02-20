@@ -136,7 +136,7 @@ If what you're editing shows `field`, then this means you're editing a datasourc
 
 If what you're editing shows `placeholder`, then this means you're modifying the presentation of the page (either by changing the placeholder properties or adding/removing renderings).  Since the shared/final toggle is intended for presentation changes, touching a `placeholder` will affect either shared or final presentation.
 
-![Toolbar Rendering](/images/toolbar-rendering.png)
+![Toolbar Rendering](/images/panel-rendering.png)
 
 If you are editing a `rendering` (e.g., changing rendering parameters, personalizing, a/b testing, removing, etc), then shared/final do matter.  Any changes to `renderings` will affect either shared or final presentation.
 
